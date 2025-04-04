@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Dotnetstore.LandLord.SharedKernel\Dotnetstore.LandLord.SharedKernel.csproj" />
+  </ItemGroup>
+</Project>
