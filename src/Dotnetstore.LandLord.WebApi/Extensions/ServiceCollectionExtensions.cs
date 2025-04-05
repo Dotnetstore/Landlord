@@ -2,6 +2,9 @@
 using Dotnetstore.LandLord.Organization.Extensions;
 using Dotnetstore.LandLord.ServiceDefaults;
 using Dotnetstore.LandLord.SharedKernel.Extensions;
+using FastEndpoints;
+using FastEndpoints.Security;
+using FastEndpoints.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -19,20 +22,17 @@ internal static class ServiceCollectionExtensions
             .AddOrganization(connectionName);
 
         builder.Services
-            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
+            .AddAuthenticationJwtBearer(s =>
+                s.SigningKey = builder.Configuration.GetValue<string>("AuthenticationService:TokenKey"))
+            .AddAuthorization()
+            .AddFastEndpoints()
+            .SwaggerDocument(o =>
             {
-                options.TokenValidationParameters = new TokenValidationParameters
+                o.DocumentSettings = s =>
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration.GetValue<string>("AuthenticationService:Issuer"),
-                    ValidAudience = builder.Configuration.GetValue<string>("AuthenticationService:Audience"),
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(
-                            builder.Configuration.GetValue<string>("AuthenticationService:TokenKey")!))
+                    s.Title = "Dotnetstore Landlord API";
+                    s.Version = "v1";
+                    s.Description = "Dotnetstore Landlord API Documentation";
                 };
             });
     }

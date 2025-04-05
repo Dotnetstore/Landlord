@@ -12,12 +12,11 @@ builder.AddWebApi(connectionName);
 var app = builder.Build();
 
 app
+    .UseAuthentication()
+    .UseAuthorization()
     .UseFastEndpoints()
     .UseSwaggerGen();
 
 app.Run();
 
-namespace Dotnetstore.LandLord.WebApi
-{
-    public partial class Program;
-}
+public partial class Program;
