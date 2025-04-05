@@ -16,4 +16,14 @@ public class ApiEndpointsTests
             ApiEndpoints.V1.Organization.Office.GetAll.Should().Be("/api/v1/organization/offices");
         }
     }
+    
+    [Fact]
+    public void ApiEndpoints_User_ShouldHaveValidEndpoints()
+    {
+        // Assert
+        using (new AssertionScope())
+        {
+            ApiEndpoints.V1.Organization.User.Login.Should().Be("/api/v1/organization/users/login");
+        }
+    }
 }

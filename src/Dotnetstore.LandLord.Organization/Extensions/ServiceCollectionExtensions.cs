@@ -1,6 +1,7 @@
 ﻿using Dotnetstore.LandLord.Organization.Data;
 using Dotnetstore.LandLord.Organization.Offices;
 using Dotnetstore.LandLord.Organization.Services;
+using Dotnetstore.LandLord.Organization.Users;
 using Dotnetstore.LandLord.SharedKernel.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,8 @@ public static class ServiceCollectionExtensions
             .AddScoped<IUnitOfWork, UnitOfWork>()
             .AddScoped<IOfficeRepository, OfficeRepository>()
             .AddScoped<IOfficeService, OfficeService>()
+            .AddScoped<IUserRepository, UserRepository>()
+            .AddScoped<IUserService, UserService>()
             .EnsureDbDeleted<OrganizationDataContext>()
             .EnsureDbCreated<OrganizationDataContext>();
 

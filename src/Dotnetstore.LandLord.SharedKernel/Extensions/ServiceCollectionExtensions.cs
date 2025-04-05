@@ -15,6 +15,7 @@ public static class ServiceCollectionExtensions
     {
         builder.Services
             .AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>))
+            .AddScoped<IAuthenticationService, AuthenticationService>()
             .AddFastEndpoints()
             .SwaggerDocument(o =>
             {

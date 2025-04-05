@@ -18,6 +18,13 @@ public static class ApiEndpoints
                 
                 public static string GetAll => OfficeBaseUrl;
             }
+            
+            public static class User
+            {
+                private static string UserBaseUrl => $"{OrganizationBaseUrl}/users";
+                
+                public static string Login => $"{UserBaseUrl}/login";
+            }
         }
     }
 }

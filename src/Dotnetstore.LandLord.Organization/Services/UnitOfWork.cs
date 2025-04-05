@@ -1,5 +1,6 @@
 ﻿using Dotnetstore.LandLord.Organization.Data;
 using Dotnetstore.LandLord.Organization.Offices;
+using Dotnetstore.LandLord.Organization.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -7,12 +8,14 @@ namespace Dotnetstore.LandLord.Organization.Services;
 
 internal class UnitOfWork(
     OrganizationDataContext context,
-    IOfficeRepository officeRepository)
+    IOfficeRepository officeRepository,
+    IUserRepository userRepository)
     : IUnitOfWork, IDisposable
 {
     private IDbContextTransaction? _objTran;
     
     public IOfficeRepository Offices { get; } = officeRepository;
+    public IUserRepository Users { get; } = userRepository;
 
     public void CreateTransaction()
     {
@@ -30,11 +33,11 @@ internal class UnitOfWork(
         _objTran?.Dispose();
     }
         
-    public async ValueTask<int> Save()
+    public async ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken)
     {
         try
         {
-            return await context.SaveChangesAsync();
+            return await context.SaveChangesAsync(cancellationToken);
         }
         catch (DbUpdateException ex)
         {

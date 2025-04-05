@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Dotnetstore.LandLord.SharedKernel\Dotnetstore.LandLord.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\src\Dotnetstore.LandLord.TestHelper\Dotnetstore.LandLord.TestHelper.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+  </ItemGroup>
+</Project>
