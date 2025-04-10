@@ -37,5 +37,12 @@ internal sealed class OfficeConfiguration : IEntityTypeConfiguration<Office>
             .HasMaxLength(DataSchemeConstants.MaxSocialSecurityNumberLength)
             .IsRequired(false)
             .IsUnicode(false);
+
+        builder
+            .HasData(OfficeBuilder.Create()
+                .WithId(new OfficeId(Guid.CreateVersion7()))
+                .WithName("Dotnetstore")
+                .WithCorporateId()
+                .Build());
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dotnetstore.LandLord.Organization.Data;
+using Dotnetstore.LandLord.SharedKernel.Extensions;
 using Dotnetstore.LandLord.SharedKernel.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,5 +15,10 @@ internal sealed class OfficeRepository(OrganizationDataContext context) : Generi
             .OrderBy(x => x.Name)
             .ThenBy(x => x.CorporateId)
             .ToListAsync(cancellationToken);
+    }
+
+    void IOfficeRepository.DetachEntity(Office office)
+    {
+        context.DetachEntity(office);
     }
 }

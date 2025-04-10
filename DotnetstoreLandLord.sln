@@ -38,6 +38,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetstore.LandLord.Shared
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetstore.LandLord.SharedKernel.Tests", "tests\Dotnetstore.LandLord.SharedKernel.Tests\Dotnetstore.LandLord.SharedKernel.Tests.csproj", "{141D4B34-E048-4328-BD30-66C3A6416FD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{9C04B314-AD0E-4E8B-8C87-C77F318FDE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetstore.LandLord.WebUI", "src\Dotnetstore.LandLord.WebUI\Dotnetstore.LandLord.WebUI.csproj", "{46FD692A-C027-418E-85F7-6000D5F0E1B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,7 @@ Global
 		{A289AE20-64E8-435B-A2D8-D2CBFF98F174} = {63C30664-A55D-40F3-8853-98BA44800627}
 		{4244E55D-2F6D-4557-8F17-D80AE6385B5B} = {23917922-60CE-4DB5-9B67-8AD40B879144}
 		{141D4B34-E048-4328-BD30-66C3A6416FD0} = {23917922-60CE-4DB5-9B67-8AD40B879144}
+		{46FD692A-C027-418E-85F7-6000D5F0E1B9} = {9C04B314-AD0E-4E8B-8C87-C77F318FDE3C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8A254553-9B00-49B2-8AF6-814FA377440E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -96,5 +101,9 @@ Global
 		{141D4B34-E048-4328-BD30-66C3A6416FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141D4B34-E048-4328-BD30-66C3A6416FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141D4B34-E048-4328-BD30-66C3A6416FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46FD692A-C027-418E-85F7-6000D5F0E1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46FD692A-C027-418E-85F7-6000D5F0E1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46FD692A-C027-418E-85F7-6000D5F0E1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46FD692A-C027-418E-85F7-6000D5F0E1B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

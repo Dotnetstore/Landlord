@@ -1,0 +1,24 @@
+﻿@page "/Organization/Offices/Edit/{id:guid}"
+@model Dotnetstore.LandLord.WebUI.Pages.Organization.Offices.Edit
+
+<h1>Edit Office</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Office Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" asp-for="OfficeRequest.Name" />
+        <span class="text-danger" asp-validation-for="OfficeRequest.Name"></span>
+    </div>
+    <div class="mb-3">
+        <label for="CorporateId" class="form-label">Corporate ID</label>
+        <input type="text" class="form-control" id="CorporateId" name="CorporateId" asp-for="OfficeRequest.CorporateId" />
+        <span class="text-danger" asp-validation-for="OfficeRequest.CorporateId"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

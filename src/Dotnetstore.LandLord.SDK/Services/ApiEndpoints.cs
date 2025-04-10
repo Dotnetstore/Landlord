@@ -17,6 +17,10 @@ public static class ApiEndpoints
                 private static string OfficeBaseUrl => $"{OrganizationBaseUrl}/offices";
                 
                 public static string GetAll => OfficeBaseUrl;
+                public static string GetById => $"{OfficeBaseUrl}/{{id:guid}}";
+                public static string Create => OfficeBaseUrl;
+                public static string Update => $"{OfficeBaseUrl}/{{id:guid}}";
+                public static string Delete => $"{OfficeBaseUrl}/{{id:guid}}";
             }
             
             public static class User

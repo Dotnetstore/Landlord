@@ -1,7 +1,5 @@
 ﻿using Dotnetstore.LandLord.SharedKernel.Enums;
 using Dotnetstore.LandLord.SharedKernel.Services;
-using FastEndpoints;
-using FastEndpoints.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

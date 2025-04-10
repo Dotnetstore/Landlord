@@ -14,6 +14,10 @@ public class ApiEndpointsTests
         using (new AssertionScope())
         {
             ApiEndpoints.V1.Organization.Office.GetAll.Should().Be("/api/v1/organization/offices");
+            ApiEndpoints.V1.Organization.Office.GetById.Should().Be("/api/v1/organization/offices/{id:guid}");
+            ApiEndpoints.V1.Organization.Office.Create.Should().Be("/api/v1/organization/offices");
+            ApiEndpoints.V1.Organization.Office.Update.Should().Be("/api/v1/organization/offices/{id:guid}");
+            ApiEndpoints.V1.Organization.Office.Delete.Should().Be("/api/v1/organization/offices/{id:guid}");
         }
     }
     

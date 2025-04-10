@@ -1,12 +1,9 @@
-﻿using System.Text;
-using Dotnetstore.LandLord.Organization.Extensions;
+﻿using Dotnetstore.LandLord.Organization.Extensions;
 using Dotnetstore.LandLord.ServiceDefaults;
 using Dotnetstore.LandLord.SharedKernel.Extensions;
 using FastEndpoints;
 using FastEndpoints.Security;
 using FastEndpoints.Swagger;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Dotnetstore.LandLord.WebApi.Extensions;
 

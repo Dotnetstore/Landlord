@@ -8,6 +8,11 @@ var db = builder.AddPostgres("db")
 var dotnetstoreLandlordDb = db.AddDatabase("DotnetstoreLandlordDb");
 
 var apiService = builder.AddProject<Dotnetstore_LandLord_WebApi>("apiService")
-    .WithReference(dotnetstoreLandlordDb);
+    .WithReference(dotnetstoreLandlordDb)
+    .WaitFor(dotnetstoreLandlordDb);
+
+var webUI = builder.AddProject<Dotnetstore_LandLord_WebUI>("webUI")
+    .WithReference(apiService)
+    .WaitFor(apiService);
 
 builder.Build().Run();

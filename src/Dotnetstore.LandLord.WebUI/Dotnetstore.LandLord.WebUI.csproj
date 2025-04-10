@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="..\Dotnetstore.LandLord.SDK\Dotnetstore.LandLord.SDK.csproj" />
+    <ProjectReference Include="..\Dotnetstore.LandLord.ServiceDefaults\Dotnetstore.LandLord.ServiceDefaults.csproj" />
+  </ItemGroup>
+</Project>
